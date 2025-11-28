@@ -4,11 +4,17 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
 dotenv.config();
 
 import { connectDB } from "./config/db.js";
 import employeesRoutes from "./routes/employees.routes.js";
 import tasksRoutes from "./routes/tasks.routes.js";
+
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+app.use(express.static(path.join(__dirname, "../")));
 
 const app = express();
 app.use(helmet());
