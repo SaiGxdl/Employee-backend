@@ -117,7 +117,7 @@ To show the API working in your portfolio, add:
 
 
 ![Employee](./employee.png)
-![Load Task](./load task.png)
+![Load Task](./load-task.png)
 ![Health](./health.png)
 
 
