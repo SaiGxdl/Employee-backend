@@ -116,14 +116,11 @@ To show the API working in your portfolio, add:
 * A screenshot of `curl http://localhost:4000/health` or the Render URL health check
 
 
-**Where to put assets in your repo:**
+![Employee](./employee.png)
+![Load Task](./load task.png)
+![Health](./health.png)
 
-```
-/health.png
-/employee.png
-/load task.png
 
-```
 
 **Recommended tools**
 
