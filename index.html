@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Conference API Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f5f6fa;
+    }
+    h1 { color: #3742fa; }
+    button {
+      padding: 10px 20px;
+      margin: 10px 0;
+      background: #3742fa;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    pre {
+      background: #fff;
+      padding: 20px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      max-height: 400px;
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Conference Backend — Demo UI</h1>
+
+  <p>Click the buttons below to fetch live API data from Render.</p>
+
+  <button onclick="getEmployees()">Load Employees</button>
+  <button onclick="getTasks()">Load Tasks</button>
+  <button onclick="getHealth()">Check Health</button>
+
+  <pre id="output">Click a button to load data...</pre>
+
+  <script>
+    const BASE = window.location.origin;
+
+    async function getEmployees() {
+      const res = await fetch(BASE + "/api/employees");
+      const data = await res.json();
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function getTasks() {
+      const res = await fetch(BASE + "/api/tasks");
+      const data = await res.json();
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function getHealth() {
+      const res = await fetch(BASE + "/health");
+      const data = await res.json();
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
